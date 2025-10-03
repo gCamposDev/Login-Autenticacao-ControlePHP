@@ -8,7 +8,7 @@
 
 ## Instalação
 
-1. *Clone ou copie* o projeto para a pasta correta do seu servidor local:
+1. *Clone ou copie(a pasta login-acesso)* o projeto para a pasta correta do seu servidor local:
 
    - Para XAMPP: htdocs/
 
