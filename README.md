@@ -8,7 +8,7 @@
 
 ## Instalação
 
-1. *Clone ou copie(a pasta login-acesso)* o projeto para a pasta correta do seu servidor local:
+1. *Clone ou baixe o arquivo zip* o projeto para a pasta correta do seu servidor local:
 
    - Para XAMPP: htdocs/
 
@@ -30,13 +30,29 @@ CREATE TABLE IF NOT EXISTS usuarios (
   perfil ENUM('admin', 'user') NOT NULL DEFAULT 'user',
   criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS cnhs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  id_usuario INT NOT NULL,
+  numero_cnh VARCHAR(20) NOT NULL,
+  categoria ENUM('A','B','AB','C','D','E') NOT NULL,
+  validade DATE NOT NULL,
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 ```
 3. *Acesse no navegador:*
    
-   - http://localhost/login-acesso/public/index.php
+   - http://localhost/Login-Autenticacao-ControlePHP-main/public/index.php
 
 4. *Para criar um usuário com perfil admin, acesse o seguinte link:*
    
-   - http://localhost/login-acesso/public/criar_admin.php
+   - http://localhost/Login-Autenticacao-ControlePHP-main/public/criar_admin.php
 
 *Após a criação do administrador, exclua o arquivo criar_admin.php por motivos de segurança!*
+
+5. *ATENÇÃO*
+   
+   - Verifique o endereço das pastas de acordo com as informações acima
+   - Use exatamente o mesmo comando SQL acima
+   - Qualquer problema com a configuração ou o projeto, fique a vontade para enviar um email -> gcamposlive@gmail.com
