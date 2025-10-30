@@ -8,9 +8,10 @@
 
 ## Instalação
 
-1. *Clone ou baixe o arquivo zip* o projeto para a pasta correta do seu servidor local:
+1. *Clone o projeto para a pasta correta do seu servidor local*:
 
    - Para XAMPP: htdocs/
+   - No git bash -> git clone git@github.com:gCamposDev/Login-Autenticacao-ControlePHP.git
 
 2. *Crie o banco de dados MySQL:*
 
@@ -43,11 +44,11 @@ CREATE TABLE IF NOT EXISTS cnhs (
 ```
 3. *Acesse no navegador:*
    
-   - http://localhost/Login-Autenticacao-ControlePHP-main/public/index.php
+   - http://localhost/Login-Autenticacao-ControlePHP/public/index.php
 
 4. *Para criar um usuário com perfil admin, acesse o seguinte link:*
    
-   - http://localhost/Login-Autenticacao-ControlePHP-main/public/criar_admin.php
+   - http://localhost/Login-Autenticacao-ControlePHP/public/criar_admin.php
 
 *Após a criação do administrador, exclua o arquivo criar_admin.php por motivos de segurança!*
 
