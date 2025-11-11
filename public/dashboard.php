@@ -52,10 +52,19 @@ $temCNH = $stmt->fetchColumn();
       </article>
 
       <article class="card">
+        <h2>Cadastrar Veículo</h2>
+        <p>Cadastre seu carro para disponibilizar no sistema.</p>
+        <a class="button" href="cadastrar_veiculo.php">Cadastrar Veículo</a>
+      </article>
+      
+      <article class="card">
         <h2>Perfil</h2>
         <p>Veja e atualize suas informações de acesso.</p>
         <a class="button button-disabled" href="javascript:void(0)">Perfil (Botão inativo)</a>
       </article>
+
+      
+
 
       <?php if ($perfilLogado === 'admin'): ?>
       <article class="card">
