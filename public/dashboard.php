@@ -48,7 +48,7 @@ $temCNH = $stmt->fetchColumn();
       <article class="card">
         <h2>Alugar Carro</h2>
         <p>Inicie um novo contrato de locação rapidamente.</p>
-        <a class="button button-disabled" href="javascript:void(0)">Alugar Carro (Botão inativo)</a>
+        <a class="button" href="veiculos_disponiveis.php">Alugar Carro</a>
       </article>
 
       <article class="card">

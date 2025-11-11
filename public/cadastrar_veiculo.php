@@ -9,10 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $modelo = trim($_POST['modelo']);
   $ano = (int) $_POST['ano'];
   $placa = trim($_POST['placa']);
+  $preco_dia = (float) $_POST['preco_dia'];
 
-  if ($marca && $modelo && $ano && $placa) {
-    $stmt = $pdo->prepare("INSERT INTO veiculos (id_usuario, marca, modelo, ano, placa) VALUES (?, ?, ?, ?, ?)");
-    $stmt->execute([$idUsuario, $marca, $modelo, $ano, $placa]);
+  if ($marca && $modelo && $ano && $placa && $preco_dia > 0) {
+    $stmt = $pdo->prepare("INSERT INTO veiculos (id_usuario, marca, modelo, ano, placa, preco_dia) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$idUsuario, $marca, $modelo, $ano, $placa, $preco_dia]);
     header("Location: veiculos_disponiveis.php");
     exit;
   }
@@ -33,8 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <input class="input" type="text" name="modelo" placeholder="Modelo" required>
       <input class="input" type="number" name="ano" placeholder="Ano" required>
       <input class="input" type="text" name="placa" placeholder="Placa" required>
-      <button class="button" type="submit">Salvar</button>
-      <div class="helper"><a href="dashboard.php">Voltar para Dashboard</a></div>
+      <input class="input" type="number" step="0.01" min="0" name="preco_dia" placeholder="Preço por dia (R$)" required>
+
+      <button class="button" type="submit">Salvar Veículo</button>
+      <div class="helper"><a href="dashboard.php">← Voltar para o Dashboard</a></div>
     </form>
   </div>
 </body>
