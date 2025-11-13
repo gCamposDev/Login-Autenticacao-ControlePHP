@@ -34,7 +34,7 @@ $veiculos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p><strong>Ano:</strong> <?= htmlspecialchars($v['ano']) ?></p>
             <p><strong>Placa:</strong> <?= htmlspecialchars($v['placa']) ?></p>
             <p><strong>Preço por dia:</strong> R$ <?= number_format($v['preco_dia'], 2, ',', '.') ?></p>
-            <a class="button" href="alugar_veiculo.php?id=<?= $veiculo['id'] ?>">Alugar</a>
+            <a class="button" href="alugar_veiculo.php?id=<?= $v['id'] ?>">Alugar</a>
           </article>
         <?php endforeach; ?>
       </section>
