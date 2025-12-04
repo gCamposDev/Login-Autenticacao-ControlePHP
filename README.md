@@ -80,10 +80,28 @@ CREATE TABLE IF NOT EXISTS locacoes (
 4. *Para criar um usuário com perfil admin, acesse o seguinte link:*
    
    - http://localhost/SistemaWebPHP-LocacaoVeiculos/public/criar_admin.php
+   - Após acessar o link acima, terá um novo usuário admin
+   - Usuário: admin
+   - Senha: 1234
 
 *Após a criação do administrador, exclua o arquivo criar_admin.php por motivos de segurança!*
 
-5. *ATENÇÃO*
+5. *Consumir API tabela FIPE:*
+   
+   - O sistema PHP já possui toda a estrutura necessária para consumir a API da Tabela FIPE.
+   - Para que o processo funcione corretamente, siga os passos abaixo:
+   - 1. Acesse o repositório da API: [API FIPE – Java Spring](https://github.com/gCamposDev/API-FIPE-JavaSpring)
+   - Dentro do repositório, siga as instruções de instalação e execução descritas no README.
+   - 2. Execute a API FIPE na mesma máquina onde o sistema PHP está rodando
+   - O sistema utiliza chamadas HTTP internas apontando para localhost.
+   - Por isso, a API precisa estar ativa na mesma máquina e porta configuradas no arquivo do sistema.
+   - 3. Após a API estar em execução, o sistema PHP automaticamente:
+   - Envia requisições para obter o valor FIPE do veículo selecionado
+   - Armazena o JSON retornado na coluna fipe_json
+   - Salva o valor numérico em valor_fipe na tabela locacoes
+
+
+6. *ATENÇÃO*
    
    - Verifique o endereço das pastas de acordo com as informações acima
    - Use exatamente o mesmo comando SQL
