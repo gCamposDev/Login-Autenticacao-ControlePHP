@@ -5,20 +5,17 @@ require_once __DIR__ . '/../app/config.php';
 $idUsuario = $_SESSION['user']['id'] ?? 0;
 $mensagem = "";
 
-// Buscar CNH atual
 $stmt = $pdo->prepare("SELECT * FROM cnhs WHERE id_usuario = ?");
 $stmt->execute([$idUsuario]);
 $cnh = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['excluir'])) {
-        // Excluir CNH
         $excluir = $pdo->prepare("DELETE FROM cnhs WHERE id_usuario = ?");
         $excluir->execute([$idUsuario]);
         header("Location: visualizar_cnh.php");
         exit;
     } else {
-        // Atualizar CNH
         $numero = $_POST['numero_cnh'] ?? '';
         $categoria = $_POST['categoria'] ?? '';
         $validade = $_POST['validade'] ?? '';

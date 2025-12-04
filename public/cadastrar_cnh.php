@@ -5,7 +5,6 @@ require_once __DIR__ . '/../app/config.php';
 $usuarioLogado = $_SESSION['user']['usuario'] ?? 'Usuário';
 $idUsuario = $_SESSION['user']['id'] ?? 0;
 
-// Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $numero_cnh = trim($_POST['numero_cnh'] ?? '');
     $categoria  = trim($_POST['categoria'] ?? '');

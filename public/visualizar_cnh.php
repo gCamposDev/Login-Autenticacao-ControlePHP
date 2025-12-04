@@ -4,7 +4,6 @@ require_once __DIR__ . '/../app/config.php';
 
 $idUsuario = $_SESSION['user']['id'] ?? 0;
 
-// Buscar CNH vinculada ao usuário
 $stmt = $pdo->prepare("SELECT numero_cnh, categoria, validade FROM cnhs WHERE id_usuario = ?");
 $stmt->execute([$idUsuario]);
 $cnh = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -6,7 +6,6 @@ $usuarioLogado = $_SESSION['user']['usuario'] ?? 'Usuário';
 $perfilLogado  = $_SESSION['user']['perfil']  ?? 'user';
 $idUsuario     = $_SESSION['user']['id'] ?? 0;
 
-// Verifica se a CNH já está cadastrada para o usuário atual
 $stmt = $pdo->prepare("SELECT id FROM cnhs WHERE id_usuario = ?");
 $stmt->execute([$idUsuario]);
 $temCNH = $stmt->fetchColumn();
@@ -58,9 +57,9 @@ $temCNH = $stmt->fetchColumn();
       </article>
       
       <article class="card">
-        <h2>Perfil</h2>
-        <p>Veja e atualize suas informações de acesso.</p>
-        <a class="button button-disabled" href="javascript:void(0)">Perfil (Botão inativo)</a>
+        <h2>Locações</h2>
+        <p>Veja suas locações</p>
+        <a class="button" href="minhas_locacoes.php">Locações</a>
       </article>
 
       

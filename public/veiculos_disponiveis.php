@@ -4,7 +4,6 @@ require_once __DIR__ . '/../app/config.php';
 
 $id_usuario = $_SESSION['user']['id'] ?? 0;
 
-// Seleciona os veículos de outros usuários disponíveis para aluguel
 $sql = "SELECT * FROM veiculos WHERE id_usuario != ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$id_usuario]);
