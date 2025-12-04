@@ -90,16 +90,18 @@ CREATE TABLE IF NOT EXISTS locacoes (
    
    - O sistema PHP já possui toda a estrutura necessária para consumir a API da Tabela FIPE.
    - Para que o processo funcione corretamente, siga os passos abaixo:
-   - 1. Acesse o repositório da API: [API FIPE – Java Spring](https://github.com/gCamposDev/API-FIPE-JavaSpring)
-   - Dentro do repositório, siga as instruções de instalação e execução descritas no README.
-   - 2. Execute a API FIPE na mesma máquina onde o sistema PHP está rodando
-   - O sistema utiliza chamadas HTTP internas apontando para localhost.
-   - Por isso, a API precisa estar ativa na mesma máquina e porta configuradas no arquivo do sistema.
-   - 3. Após a API estar em execução, o sistema PHP automaticamente:
-   - Envia requisições para obter o valor FIPE do veículo selecionado
-   - Armazena o JSON retornado na coluna fipe_json
-   - Salva o valor numérico em valor_fipe na tabela locacoes
-
+   - *1. Acesse o repositório da API: [API FIPE – Java Spring](https://github.com/gCamposDev/API-FIPE-JavaSpring)*
+      - Dentro do repositório, siga as instruções de instalação e execução descritas no README.
+   - *2. Execute a API FIPE na mesma máquina onde o sistema PHP está rodando*
+      - O sistema utiliza chamadas HTTP internas apontando para localhost.
+      - Por isso, a API precisa estar ativa na mesma máquina e porta configuradas no arquivo do sistema.
+   - *3. Após a API estar em execução, o sistema PHP automaticamente:*
+      - Envia requisições para obter o valor FIPE do veículo selecionado
+      - Armazena o JSON retornado na coluna fipe_json
+      - Salva o valor numérico em valor_fipe na tabela locacoes
+   - *4. Funcionamento da API neste projeto*
+      - Quando o usuário realiza uma locação, o sistema envia automaticamente uma requisição à API FIPE para buscar o valor atualizado do veículo.
+      - O valor retornado é salvo na tabela locacoes e exibido na tela “Minhas Locações”.
 
 6. *ATENÇÃO*
    
