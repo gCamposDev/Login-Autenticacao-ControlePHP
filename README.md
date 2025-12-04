@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS locacoes (
 
 5. *Consumir API tabela FIPE:*
    
-   O sistema PHP já possui toda a estrutura necessária para consumir a API da Tabela FIPE.
+   O sistema PHP já possui toda a estrutura necessária para consumir a API da Tabela FIPE.<br>
    Para que o processo funcione corretamente, siga os passos abaixo:
    - *1. Acesse o repositório da API: [API FIPE – Java Spring](https://github.com/gCamposDev/API-FIPE-JavaSpring)*
       - Dentro do repositório, siga as instruções de instalação e execução descritas no README.
